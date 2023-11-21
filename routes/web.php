@@ -1,7 +1,9 @@
 <?php
 
-use App\Http\Controllers\StoreController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\StoreController;
+use App\Models\Products;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,3 +28,12 @@ Route::get('/login', [StoreController::class, 'login']);
 
 //About us
 Route::get('/aboutus', [StoreController::class, 'about']);
+
+//Admin page
+Route::get('/admin', [UserController::class, 'adminpage']);
+
+//Manage Product page
+Route::get('/manageproduct', [UserController::class, 'manageproduct']);
+
+//View Product page
+Route::get('/products/{product}', [StoreController::class, 'product']);

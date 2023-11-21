@@ -13,6 +13,7 @@ class StoreController extends Controller
     public function index() {
         return view('store.index' , ['products' => Products::all()]);
     }
+
     public function register() {
         return view('components.register');
     }
@@ -23,4 +24,9 @@ class StoreController extends Controller
         return view('components.aboutus');
     }
     
+    public function product(Products $product) {
+        return view('store.product' , [
+            'product' => $product
+        ]);
+    }
 }

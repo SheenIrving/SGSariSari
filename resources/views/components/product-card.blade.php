@@ -1,7 +1,7 @@
 @props(['product'])
 <div class="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/4">
   <div class="overflow-hidden rounded-lg shadow-lg">
-    <a href="#">
+    <a href="/products/{{$product->id}}">
       <img
         alt="Placeholder"
         class="block h-auto w-full"
@@ -9,7 +9,7 @@
       />
     </a>
     <div class="px-5 pb-5">
-      <a href="#">
+      <a href="/products/{{$product->id}}">
         <h5
           class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white"
         >

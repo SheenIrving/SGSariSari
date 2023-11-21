@@ -23,10 +23,11 @@
     <title>S&G Sari-Sari Store</title>
   </head>
   <body>
+    
     <nav class="text-white border-gray-200 bg-gray-900">
         <div class="container flex flex-wrap items-center justify-between mx-auto p-4">
         <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
-            <img src="images/logo.png" class="h-8" alt="S&G Logo"  />
+            <img src="{{asset('images/logo.png')}}" class="h-8" alt="S&G Logo"  />
             
         </a>
         <div class="flex md:order-1">
@@ -90,22 +91,22 @@
       </div>
     </nav>
 
-    <main>
+      <main>
         {{$slot}}
       </main>
 
       <!-- Footer -->
 
-    <footer class="bg-gray-900">
+      <footer class="bg-gray-900">
         <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
           <div class="md:flex md:justify-between">
             <div class="mb-6 md:mb-0">
               <a
-                href="#"
+                href="/"
                 class="flex items-center"
               >
                 <img
-                  src="./images/Asset-2@300x-pink-outer-glow.png"
+                  src="{{asset('images/Asset-2@300x-pink-outer-glow.png')}}"
                   alt="S&R Logo"
                   width="300"
                 />
@@ -114,7 +115,7 @@
             <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
               <div>
                 <h2
-                  class="mb-6 text-sm font-semibold text-pink-400 uppercase "
+                  class="mb-6 text-sm font-semibold text-pink-400 uppercase"
                 >
                   Contact Us
                 </h2>
@@ -161,7 +162,7 @@
             </div>
           </div>
           <hr
-            class="my-6 border-gray-200 sm:mx-auto d lg:my-8"
+            class="my-6 border-red-300 sm:mx-auto dark:border-gray-700 lg:my-8"
           />
           <div class="sm:flex sm:items-center sm:justify-between">
             <span class="text-sm text-pink-400 sm:text-center "
@@ -175,6 +176,7 @@
           </div>
         </div>
       </footer>
+    
     </body>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.1.1/flowbite.min.js"></script>
   </html>
