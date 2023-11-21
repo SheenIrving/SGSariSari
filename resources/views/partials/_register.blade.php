@@ -1,6 +1,6 @@
-<section class="my-5 w-full min-h-min flex items-center justify-center">
+<section class="my-5 w-full min-h-min flex items-center justify-center pb-8">
     <div class="w-full">
-        <div class="bg-white w-5/6 md:w-3/4 lg:w-2/3 xl:w-[500px] 2xl:w-[550px] mt-8 mx-auto px-16 py-8 rounded-lg shadow-md shadow-red-300">
+        <div class="bg-white w-5/6 md:w-3/4 lg:w-2/3 xl:w-[500px] 2xl:w-[550px] mt-8 mx-auto px-16 py-8 rounded-lg shadow-md shadow-pink-400">
 
             <h2 class="text-center text-2xl font-bold tracking-wide text-gray-800">Sign Up</h2>
             <p class="text-center text-sm text-gray-600 mt-2">Already have an account? <a href="#" class="text-blue-600 hover:text-blue-700 hover:underline" title="Sign In">Sign in here</a></p>
@@ -40,13 +40,10 @@
                     </div>
                 </div>
 
-                <div class="flex items-center">
-                    <input type="checkbox" name="remember_me" id="remember_me" class="mr-2 focus:ring-0 rounded">
-                    <label for="remember_me" class="text-gray-700">I accept the <a href="#" class="text-blue-600 hover:text-blue-700 hover:underline">terms</a> and <a href="#" class="text-blue-600 hover:text-blue-700 hover:underline">privacy policy</a></label>
-                </div>
+                
             
                 <div class="my-4 flex items-center justify-end space-x-4">
-                    <button class="bg-red-300 hover:bg-red-700 rounded-lg px-8 py-2 text-gray-100 hover:shadow-xl transition duration-150 uppercase">Sign Up</button>
+                    <button class="bg-pink-400 hover:bg-pink-600 rounded-lg px-8 py-2 text-gray-100 hover:shadow-xl transition duration-150 uppercase">Sign Up</button>
                 </div>
             </form>
         </div>

@@ -2,7 +2,7 @@
       class="flex flex-col items-center my-5 w-full min-h-min flex items-center justify-center"
     >
       <div
-        class="w-full bg-white rounded-lg shadow-md shadow-red-300 dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700"
+        class="w-full bg-white rounded-lg shadow-md shadow-pink-400 dark:border md:mt-0 sm:max-w-md xl:p-0 "
       >
         <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
           <h1
@@ -18,14 +18,14 @@
               <label
                 for="email"
                 class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                >Your email</label
+                >Username</label
               >
               <input
                 type="email"
                 name="email"
                 id="email"
                 class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                placeholder="Enter valid email address"
+                placeholder="Username"
                 required=""
               />
             </div>
@@ -70,7 +70,7 @@
               >
             </div>
             <button
-              class="bg-red-300 hover:bg-red-700 rounded-lg px-8 py-2 text-gray-100 hover:shadow-xl transition duration-150 uppercase"
+              class="bg-pink-400 hover:bg-pink-600 rounded-lg px-8 py-2 text-gray-100 hover:shadow-xl transition duration-150 uppercase"
             >
               Login
             </button>

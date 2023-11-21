@@ -23,3 +23,6 @@ Route::get('/register', [StoreController::class, 'register']);
 
 //Login
 Route::get('/login', [StoreController::class, 'login']);
+
+//About us
+Route::get('/aboutus', [StoreController::class, 'about']);

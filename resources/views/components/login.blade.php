@@ -2,5 +2,4 @@
 
     @include('partials._login')
     
-
 </x-layout>

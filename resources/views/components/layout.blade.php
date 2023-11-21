@@ -24,7 +24,7 @@
   </head>
   <body>
     <nav class="text-white border-gray-200 bg-gray-900">
-        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+        <div class="container flex flex-wrap items-center justify-between mx-auto p-4">
         <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
             <img src="images/logo.png" class="h-8" alt="S&G Logo"  />
             
@@ -70,10 +70,10 @@
             
             <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 bg-gray-900 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-dark-700">
             <li>
-                <a href="#" class="block py-2 px-3 text-pink-400 hover:text-pink-600 rounded md:bg-transparent md:text-pink-400 md:p-0 " aria-current="page"><i class="fa-solid fa-house"></i> Home</a>
+                <a href="/" class="block py-2 px-3 text-pink-400 hover:text-pink-600 rounded md:bg-transparent md:text-pink-400 md:p-0 " aria-current="page"><i class="fa-solid fa-house"></i> Home</a>
             </li>
             <li>
-                <a href="#" class="block py-2 px-3 text-pink-400 rounded hover:text-pink-600 md:hover:bg-transparent md:hover:text-pink-600 md:p-0 "><i class="fa-solid fa-address-card"></i> About us</a>
+                <a href="/aboutus" class="block py-2 px-3 text-pink-400 rounded hover:text-pink-600 md:hover:bg-transparent md:hover:text-pink-600 md:p-0 "><i class="fa-solid fa-address-card"></i> About us</a>
             </li>
             
             <li>
@@ -169,7 +169,7 @@
               <a
                 href="/"
                 class="hover:underline"
-                >S&R Sari Sari Store</a
+                >S&G Sari Sari Store</a
               >. All Rights Reserved.
             </span>
           </div>
