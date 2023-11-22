@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+
+use App\Models\Products;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -11,6 +13,10 @@ class UserController extends Controller
     }
 
     public function manageproduct() {
-        return view('components.adminmanageprod');
+        return view('components.adminmanageprod' , ['products' => Products::all()]);
     }
+
+    
+
+    
 }

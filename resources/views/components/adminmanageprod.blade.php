@@ -1,3 +1,4 @@
+
  <x-layout>
     <div class="container mx-auto flex flex-wrap w-full pt-10 pb-20">
         <div class="w-80 bg-white rounded p-3">
@@ -191,7 +192,7 @@
   
         <div class="w-9/12">
           <section class="flex justify-between max-w-sm sm:max-w-3xl">
-            <h2 class="text-4xl font-extrabold dark:text-white">Product Inventory</h2>
+            <h2 class="text-4xl font-extrabold dark:text-white">Product Management</h2>
             <button data-modal-target="crud-modal" data-modal-toggle="crud-modal" class="block text-white bg-pink-400 hover:bg-pink-600 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center " type="button">
               Add Product
             </button>
@@ -214,55 +215,64 @@
                             </button>
                         </div>
                         <!-- Modal body -->
-                        <form action="#" class="p-4 md:p-5">
+                        <form method="POST" enctype="multipart/form-data" action="/products" class="p-4 md:p-5">
+                          @csrf
                             <div class="grid gap-4 mb-4 grid-cols-2">
                                 <div class="col-span-2">
-                                    <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Product Brand</label>
-                                    <input type="text" name="name" id="name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Type product name" required="">
+                                    <label for="productbrand" class="block mb-2 text-sm font-medium text-gray-900 ">Product Brand</label>
+                                    <input type="text" name="productbrand" id="name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5" placeholder="Type product name" required="">
+                                    @error('productbrand')
+                                      <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+                                    @enderror
                                 </div>
                                 <div class="col-span-2 sm:col-span-1">
                                     <label for="price" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Price</label>
-                                    <input type="number" name="price" id="price" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Php" required="">
+                                    <input type="number" name="price" id="price" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5" placeholder="Php" required="">
+                                    @error('price')
+                                      <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+                                    @enderror
                                 </div>
                                 <div class="col-span-2 sm:col-span-1">
                                     <label for="category" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Category</label>
-                                    <select id="category" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
-                                        <option selected="">Select category</option>
-                                        <option value="TV">Canned Goods</option>
-                                        <option value="PC">Detergents</option>
-                                        <option value="GA">Noodles</option>
-                                        <option value="PH">Snacks</option>
+                                    <select id="category" name="category" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5" required="">
+                                        <option selected="" value=""></option>
+                                        <option value="Canned Goods">Canned Goods</option>
+                                        <option value="Detergents">Detergents</option>
+                                        <option value="Noodles">Noodles</option>
+                                        <option value="Snacks">Snacks</option>
                                     </select>
+                                    @error('category')
+                                      <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+                                    @enderror
                                 </div>
                                 <div class="col-span-2 sm:col-span-1">
                                   <label for="quantity" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"> Quantity</label>
                                   <input type="number" name="quantity" id="quantity" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="" required="">
+                                  @error('quantity')
+                                      <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+                                    @enderror
                               </div>
                                 <div class="col-span-2">
                                     <label for="description" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Product Description</label>
-                                    <textarea id="description" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Write product description here"></textarea>                    
+                                    <textarea id="description" name="description" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Write product description here" required=""></textarea>
+                                    @error('description')
+                                      <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+                                    @enderror                    
                                 </div>
-                            </div>
-                            {{-- <div class="mb-6">
-                              <label
-                                for="logo"
-                                class="inline-block text-lg mb-2"
-                              >
-                                Product Image
-                              </label>
-                              <input
-                                type="file"
-                                class="border border-gray-200 rounded p-2 w-full"
-                                name="logo"
-                              />
-                              <img
-                              class="w-48 mr-6 mb-6"
-                              src="" 
-                              alt=""
-                            />
-                              <p class="text-red-500 text-xs mt-1">warning</p>
-                            </div> --}}
-  
+                              </div>
+                                <div class="mb-6">
+                                  <label
+                                    for="logo"
+                                    class="inline-block text-lg mb-2"
+                                  >
+                                    Product Image
+                                  </label>
+                                  <input
+                                    type="file"
+                                    class="border border-gray-200 rounded p-2 w-full"
+                                    name="logo"
+                                  />
+                                </div>
                             <button type="submit" class="text-white inline-flex items-center bg-pink-400 hover:bg-pink-600 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
                                 <svg class="me-1 -ms-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd"></path></svg>
                                 Add new product
@@ -304,8 +314,7 @@
   
           <div
             class="overflow-x-auto relative shadow-md sm:rounded-lg"
-            x-data="{ products: [] }"
-            x-init="products = await (await fetch('/data.json')).json()"
+           
           >
             
             <table
@@ -371,167 +380,13 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td class="p-4">
-                    <div class="flex items-center">
-                      <input
-                        type="checkbox"
-                        class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-                      />
-                    </div>
-                  </td>
-                  <td class="py-3 px-6">Chippy</td>
-                  <td class="py-3 px-6">Red</td>
-                  <td class="py-3 px-6">Snacks</td>
-                  <td class="py-3 px-6">₱10.00</td>
-                  <td class="py-3 px-6">25</td>
-                  <td class="py-3 px-6">11-19-2023</td>
-                </tr>
-                <tr>
-                  <td class="p-4">
-                    <div class="flex items-center">
-                      <input
-                        type="checkbox"
-                        class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-                      />
-                    </div>
-                  </td>
-                  <td class="py-3 px-6">Chippy</td>
-                  <td class="py-3 px-6">Red</td>
-                  <td class="py-3 px-6">Snacks</td>
-                  <td class="py-3 px-6">₱10.00</td>
-                  <td class="py-3 px-6">25</td>
-                  <td class="py-3 px-6">11-19-2023</td>
-                </tr>
-                <tr>
-                  <td class="p-4">
-                    <div class="flex items-center">
-                      <input
-                        type="checkbox"
-                        class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-                      />
-                    </div>
-                  </td>
-                  <td class="py-3 px-6">Chippy</td>
-                  <td class="py-3 px-6">Red</td>
-                  <td class="py-3 px-6">Snacks</td>
-                  <td class="py-3 px-6">₱10.00</td>
-                  <td class="py-3 px-6">25</td>
-                  <td class="py-3 px-6">11-19-2023</td>
-                </tr>
-                <tr>
-                  <td class="p-4">
-                    <div class="flex items-center">
-                      <input
-                        type="checkbox"
-                        class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-                      />
-                    </div>
-                  </td>
-                  <td class="py-3 px-6">Chippy</td>
-                  <td class="py-3 px-6">Red</td>
-                  <td class="py-3 px-6">Snacks</td>
-                  <td class="py-3 px-6">₱10.00</td>
-                  <td class="py-3 px-6">25</td>
-                  <td class="py-3 px-6">11-19-2023</td>
-                </tr>
-                <tr>
-                  <td class="p-4">
-                    <div class="flex items-center">
-                      <input
-                        type="checkbox"
-                        class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-                      />
-                    </div>
-                  </td>
-                  <td class="py-3 px-6">Chippy</td>
-                  <td class="py-3 px-6">Red</td>
-                  <td class="py-3 px-6">Snacks</td>
-                  <td class="py-3 px-6">₱10.00</td>
-                  <td class="py-3 px-6">25</td>
-                  <td class="py-3 px-6">11-19-2023</td>
-                </tr>
-                <tr>
-                  <td class="p-4">
-                    <div class="flex items-center">
-                      <input
-                        type="checkbox"
-                        class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-                      />
-                    </div>
-                  </td>
-                  <td class="py-3 px-6">Chippy</td>
-                  <td class="py-3 px-6">Red</td>
-                  <td class="py-3 px-6">Snacks</td>
-                  <td class="py-3 px-6">₱10.00</td>
-                  <td class="py-3 px-6">25</td>
-                  <td class="py-3 px-6">11-19-2023</td>
-                </tr>
-                <tr>
-                  <td class="p-4">
-                    <div class="flex items-center">
-                      <input
-                        type="checkbox"
-                        class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-                      />
-                    </div>
-                  </td>
-                  <td class="py-3 px-6">Chippy</td>
-                  <td class="py-3 px-6">Red</td>
-                  <td class="py-3 px-6">Snacks</td>
-                  <td class="py-3 px-6">₱10.00</td>
-                  <td class="py-3 px-6">25</td>
-                  <td class="py-3 px-6">11-19-2023</td>
-                </tr>
-                <tr>
-                  <td class="p-4">
-                    <div class="flex items-center">
-                      <input
-                        type="checkbox"
-                        class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-                      />
-                    </div>
-                  </td>
-                  <td class="py-3 px-6">Chippy</td>
-                  <td class="py-3 px-6">Red</td>
-                  <td class="py-3 px-6">Snacks</td>
-                  <td class="py-3 px-6">₱10.00</td>
-                  <td class="py-3 px-6">25</td>
-                  <td class="py-3 px-6">11-19-2023</td>
-                </tr>
-                <tr>
-                  <td class="p-4">
-                    <div class="flex items-center">
-                      <input
-                        type="checkbox"
-                        class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-                      />
-                    </div>
-                  </td>
-                  <td class="py-3 px-6">Chippy</td>
-                  <td class="py-3 px-6">Red</td>
-                  <td class="py-3 px-6">Snacks</td>
-                  <td class="py-3 px-6">₱10.00</td>
-                  <td class="py-3 px-6">25</td>
-                  <td class="py-3 px-6">11-19-2023</td>
-                </tr>
-                <tr>
-                  <td class="p-4">
-                    <div class="flex items-center">
-                      <input
-                        type="checkbox"
-                        class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-                      />
-                    </div>
-                  </td>
-                  <td class="py-3 px-6">Chippy</td>
-                  <td class="py-3 px-6">Red</td>
-                  <td class="py-3 px-6">Snacks</td>
-                  <td class="py-3 px-6">₱10.00</td>
-                  <td class="py-3 px-6">25</td>
-                  <td class="py-3 px-6">11-19-2023</td>
-                </tr>
-              </tbody>
+                
+                @foreach ($products as $product)
+                  <x-product-table :product="$product"/>
+                @endforeach
+           
+              
+                </tbody>
             </table>
           </div>
         </div>
