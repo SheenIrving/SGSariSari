@@ -5,7 +5,7 @@
       <img
         alt="Placeholder"
         class="block h-auto w-full"
-        src="/images/4800016642029.jpg"
+        src="{{$product->logo ? asset('storage/' . $product->logo) : asset('images/4800016642029.jpg')}}"
       />
     </a>
     <div class="px-5 pb-5">

@@ -7,7 +7,7 @@
                   <!-- Product Images -->
                     <div class="sticky top-0 z-50 overflow-hidden ">
                         <div class="relative mb-6 lg:mb-10" style="height:450px;">
-                            <img src="{{asset('images/4800016642029.jpg')}}"
+                            <img src="{{$product->logo ? asset('storage/' . $product->logo) : asset('images/4800016642029.jpg')}}"
                                 alt="" class="object-contain w-full h-full ">
                         </div>
                     </div>
@@ -32,28 +32,28 @@
                                   <div class="w-1/2 py-2 sm:w-1/4">
                                       <a href="#"
                                           class="block border dark:border-gray-700 dark:hover:border-gray-600 hover:border-red-300 ">
-                                          <img src="{{asset('images/4800016642029.jpg')}}"
+                                          <img src="{{$product->logo ? asset('storage/' . $product->logo) : asset('images/4800016642029.jpg')}}"
                                               alt="" class="object-cover w-full lg:h-32">
                                       </a>
                                   </div>
                                   <div class="w-1/2 py-2 sm:w-1/4">
                                       <a href="#"
                                           class="block border dark:border-gray-700 dark:hover:border-gray-600 hover:border-red-300">
-                                          <img src="{{asset('images/4800016642029.jpg')}}"
+                                          <img src="{{$product->logo ? asset('storage/' . $product->logo) : asset('images/4800016642029.jpg')}}"
                                               alt="" class="object-cover w-full lg:h-32">
                                       </a>
                                   </div>
                                   <div class="w-1/2 py-2 sm:w-1/4">
                                       <a href="#"
                                           class="block border dark:border-gray-700 dark:hover:border-gray-600 hover:border-red-300">
-                                          <img src="{{asset('images/4800016642029.jpg')}}"
+                                          <img src="{{$product->logo ? asset('storage/' . $product->logo) : asset('images/4800016642029.jpg')}}"
                                               alt="" class="object-cover w-full lg:h-32">
                                       </a>
                                   </div>
                                   <div class="w-1/2 py-2 sm:w-1/4">
                                       <a href="#"
                                           class="block border dark:border-gray-700 dark:hover:border-gray-600 hover:border-red-300">
-                                          <img src="{{asset('images/4800016642029.jpg')}}"
+                                          <img src="{{$product->logo ? asset('storage/' . $product->logo) : asset('images/4800016642029.jpg')}}"
                                               alt="" class="object-cover w-full lg:h-32">
                                       </a>
                                   </div>
