@@ -32,17 +32,14 @@ Route::get('/aboutus', [StoreController::class, 'about']);
 //Admin page
 Route::get('/admin', [UserController::class, 'adminpage']);
 
-
-
 //Manage Product page
 Route::get('/manageproduct', [UserController::class, 'manageproduct']);
-
-
 
 //Store Product data
 Route::post('/products', [StoreController::class, 'store']);
 
-
+//Edit Product 
+Route::put('/manageproduct/{product}', [StoreController::class, 'update'])->name('products.update');
 
 //View Product page
 Route::get('/products/{product}', [StoreController::class, 'product']);

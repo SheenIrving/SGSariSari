@@ -51,5 +51,24 @@ class StoreController extends Controller
         return back()->with('message', 'Product Added Successfully!');
     }
 
+    //Update Product Data
+    public function update(Request $request, Products $product){        
+        $formFields = $request->validate([
+            'productbrand' => 'required',
+            'price' => 'required',
+            'quantity' => 'required',
+            'category' => 'required',
+            'description' => 'required',
+        ]);
+        if($request->hasFile('logo')) {
+            $formFields['logo'] = $request->file('logo')->store('logos', 'public');
+        }
+
+        $product-> update(($formFields));
+
+        return back()->with('message', 'Product updated successfully!');
+
+    }
+
     
 }

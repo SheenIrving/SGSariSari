@@ -16,7 +16,6 @@ class UserController extends Controller
         return view('components.adminmanageprod' , ['products' => Products::all()]);
     }
 
-    
 
-    
+  
 }
