@@ -39,7 +39,10 @@ Route::get('/manageproduct', [UserController::class, 'manageproduct']);
 Route::post('/products', [StoreController::class, 'store']);
 
 //Edit Product 
-Route::put('/manageproduct/{product}', [StoreController::class, 'update'])->name('products.update');
+// Route::put('/manageproduct/{product}', [StoreController::class, 'update'])->name('products.update');
+Route::get('/manageproduct/edit/{id}', [StoreController::class, 'editProduct']);
 
+// Update product Route
+Route::put('/manageproduct/update/{product}', [StoreController::class, 'update'])->name('products.update');
 //View Product page
 Route::get('/products/{product}', [StoreController::class, 'product']);
