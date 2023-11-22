@@ -36,7 +36,7 @@
             <li>
               <a
                 href="/admin"
-                class="flex items-center space-x-3 text-gray-700 p-2 rounded-md font-medium hover:bg-gray-200 bg-gray-200 focus:shadow-outline"
+                class="flex items-center space-x-3 text-gray-700 p-2 rounded-md font-medium hover:bg-gray-200  focus:shadow-outline"
               >
                 <span class="text-gray-600">
                   <svg
@@ -60,7 +60,7 @@
             <li>
               <button
                 type="button"
-                class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+                class="flex items-center w-full p-2 text-base font-normal text-gray-900 bg-gray-200 transition duration-75 rounded-lg group hover:bg-gray-100"
                 aria-controls="dropdown-example"
                 data-collapse-toggle="dropdown-example"
               >
@@ -326,15 +326,9 @@
                   >
                     <div class="flex items-center">
                       
-                      <label>Edit</label
+                      <label>Product name</label
                       >
                     </div>
-                  </th>
-                  <th
-                    scope="col"
-                    class="py-3 px-6"
-                  >
-                    Product name
                   </th>
                   <th
                     scope="col"
@@ -352,7 +346,7 @@
                     scope="col"
                     class="py-3 px-6"
                   >
-                    Price
+                    Price 
                   </th>
                   <th
                     scope="col"
@@ -371,6 +365,12 @@
                     class="py-3 px-6"
                   >
                     Date Updated
+                  </th>
+                  <th
+                    scope="col"
+                    class="py-3 px-6"
+                  >
+                    Edit
                   </th>
                 </tr>
               </thead>

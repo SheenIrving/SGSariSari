@@ -24,7 +24,9 @@ class StoreController extends Controller
         return view('components.aboutus');
     }
 
-    
+    public function manageproduct() {
+        return view('components.adminmanageprod' , ['products' => Products::all()]);
+    }
 
     public function product(Products $product) {
         return view('store.product' , [

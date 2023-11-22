@@ -1,9 +1,10 @@
 <?php
 
+use App\Models\Products;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\StoreController;
-use App\Models\Products;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,13 +34,19 @@ Route::get('/aboutus', [StoreController::class, 'about']);
 Route::get('/admin', [UserController::class, 'adminpage']);
 
 //Manage Product page
-Route::get('/manageproduct', [UserController::class, 'manageproduct']);
+Route::get('/manageproduct', [StoreController::class, 'manageproduct']);
 
 //Store Product data
 Route::post('/products', [StoreController::class, 'store']);
 
 //Edit Product 
-Route::put('/manageproduct/{product}', [StoreController::class, 'update'])->name('products.update');
+Route::get('/manageproduct/edit/{id}', [StoreController::class, 'editProduct']);
+
+//Update Product
+Route::put('/manageproduct/update/{product}', [StoreController::class, 'update'])->name('products.update');
+
+//Cart or Order Page
+Route::get('/cart', [CartController::class, 'cart']);
 
 //View Product page
 Route::get('/products/{product}', [StoreController::class, 'product']);

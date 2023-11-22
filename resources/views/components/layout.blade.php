@@ -85,7 +85,7 @@
                 <a href="/login" class="block py-2 px-3 text-pink-400 rounded hover:text-pink-600 md:hover:bg-transparent md:hover:text-pink-600 md:p-0 0"><i class="fa-solid fa-right-to-bracket"></i> Login</a>
             </li>
             <li>
-              <a href="#" class="block py-2 px-3 text-pink-400 rounded hover:text-pink-600 md:hover:bg-transparent md:hover:text-pink-600 md:p-0 0"><i class="fa-solid fa-cart-shopping"></i> Cart</a>
+              <a href="/cart" class="block py-2 px-3 text-pink-400 rounded hover:text-pink-600 md:hover:bg-transparent md:hover:text-pink-600 md:p-0 0"><i class="fa-solid fa-cart-shopping"></i> Cart</a>
             </li>
         </ul>
       </div>

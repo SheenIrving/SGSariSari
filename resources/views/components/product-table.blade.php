@@ -2,7 +2,7 @@
 @props(['product'])
 
 {{-- Edit Modal --}}
-<div id="edit-modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+<div id="edit-modal-{{ $product->id }}" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
   <div class="relative p-4 w-full max-w-md max-h-full">
       <!-- Modal content -->
       <div class="relative bg-white rounded-lg shadow p-4">
@@ -19,7 +19,7 @@
               </button>
           </div>
           <!-- Modal body -->
-          <form method="POST" enctype="multipart/form-data" action="{{ route('products.update', ['product' => $product]) }}" class="p-4 md:p-5">
+          <form method="POST" enctype="multipart/form-data" action="{{ route('products.update', ['product' => $product->id]) }}" class="p-4 md:p-5">
             @csrf
             @method('PUT')
               <div class="grid gap-4 mb-4 grid-cols-2">
@@ -82,18 +82,8 @@
   </div>
 </div> 
 
-<tr ">
-    <td class="p-4">
-      <div class="flex items-center">
-        {{-- <input
-          type="checkbox"
-          class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-        /> --}}
-        <button data-modal-target="edit-modal" data-modal-toggle="edit-modal" class="block text-white bg-pink-400 hover:bg-pink-600 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center" type="button">
-        <i class="fa-solid fa-pencil"></i>
-        </button>
-      </div>
-    </td>
+<tr>
+    
     <td class="py-3 px-6">{{$product->productbrand}}</td>
     <td class="py-3 px-6">{{$product->description}}</td>
     <td class="py-3 px-6">{{$product->category}}</td>
@@ -101,6 +91,14 @@
     <td class="py-3 px-6">{{$product->quantity}}</td>
     <td class="py-3 px-6">{{$product->created_at}}</td>
     <td class="py-3 px-6">{{$product->updated_at}}</td>
+
+    <td class="p-4">
+      <div class="flex items-center">
+        <button data-modal-target="edit-modal-{{ $product->id }}" data-modal-toggle="edit-modal-{{ $product->id }}" class="block text-white bg-pink-400 hover:bg-pink-600 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center" type="button">
+        <i class="fa-solid fa-pencil"></i>
+        </button>
+      </div>
+    </td>
 </tr>
 
 
