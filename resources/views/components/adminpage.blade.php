@@ -11,7 +11,7 @@
               <h4
                 class="font-semibold text-lg text-gray-700 capitalize font-poppins tracking-wide"
               >
-                Sheen Irving Suba
+              {{auth()->user()->name}}
               </h4>
               <span class="text-sm tracking-wide flex items-center space-x-1">
                 <svg

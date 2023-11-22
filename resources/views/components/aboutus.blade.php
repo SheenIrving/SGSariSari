@@ -8,12 +8,10 @@
         <div class="sm:w-1/2 p-5">
             <div class="text">
                 <span class="text-gray-500 border-b-2 border-red-630 uppercase">About us</span>
-                <h2 class="my-4 font-bold text-3xl  sm:text-4xl ">About <span class="text-red-300">S&R Sari Sari Store</span>
+                <h2 class="my-4 font-bold text-3xl  sm:text-4xl ">About <span class="text-pink-400">S&G Sari Sari Store</span>
                 </h2>
                 <p class="text-gray-700">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, commodi
-                    doloremque, fugiat illum magni minus nisi nulla numquam obcaecati placeat quia, repellat tempore
-                    voluptatum.
+                  At S&G , we pride ourselves on being your friendly neighborhood sari-sari store, offering a delightful array of everyday essentials and local favorites. Established with a vision to cater to the diverse needs of our community, we have been serving smiles and convenience since 2020.
                 </p>
             </div>
         </div>
@@ -26,10 +24,6 @@
             <div class="xl:flex xl:items-center xL:-mx-4">
                 <div class="xl:w-1/2 xl:mx-4">
                     <h1 class="text-2xl font-semibold text-gray-800 capitalize lg:text-3xl dark:text-white">The Developer Team</h1>
-    
-                    <p class="max-w-2xl mt-4 text-gray-500 dark:text-gray-300">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo incidunt ex placeat modi magni quia error alias, adipisci rem similique, at omnis eligendi optio eos harum.
-                    </p>
                 </div>
     
                 <div class="grid grid-cols-1 gap-8 mt-8 xl:mt-0 xl:mx-4 xl:w-1/2 md:grid-cols-2">
@@ -38,7 +32,7 @@
     
                         <h1 class="mt-4 text-2xl font-semibold text-gray-700 capitalize dark:text-white">Sheen Irving Suba</h1>
     
-                        <p class="mt-2 text-gray-500 capitalize dark:text-gray-300">Full stack developer</p>
+                        <p class="mt-2 text-gray-500 capitalize dark:text-gray-300">Full Stack Web Developer</p>
                     </div>
     
                     <div>
@@ -46,7 +40,7 @@
     
                         <h1 class="mt-4 text-2xl font-semibold text-gray-700 capitalize dark:text-white">Jaffy Colitoy</h1>
     
-                        <p class="mt-2 text-gray-500 capitalize dark:text-gray-300">Full Stack Developer</p>
+                        <p class="mt-2 text-gray-500 capitalize dark:text-gray-300">Full Stack Web Developer</p>
                     </div>
                 </div>
             </div>
@@ -58,13 +52,13 @@
     <section class="bg-white">
         <div class="mx-auto max-w-screen-xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
           <h1
-        class="m-5 font-bold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-3xl dark:text-white"
+        class="m-5 font-bold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-3xl dark:text-white text-center"
       >
         Customer Testimonials
       </h1>
       
           <div class="mt-8 grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-8">
-            <blockquote class="rounded-lg p-6 shadow-sm shadow-red-300 sm:p-8">
+            <blockquote class="rounded-lg p-6 shadow-sm shadow-pink-400 sm:p-8">
               <div class="flex items-center gap-4">
                 <img
                   alt="Man"
@@ -73,7 +67,7 @@
                 />
       
                 <div>
-                  <div class="flex justify-center gap-0.5 text-red-300">
+                  <div class="flex justify-center gap-0.5 text-pink-400">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       class="h-5 w-5"
@@ -131,14 +125,11 @@
               </div>
       
               <p class="mt-4 text-gray-700">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa sit
-                rerum incidunt, a consequuntur recusandae ab saepe illo est quia
-                obcaecati neque quibusdam eius accusamus error officiis atque
-                voluptates magnam!
+                "I've been coming to S&G for years now, and it's more than just a store - it's like an extension of my home. The friendly service and wide variety of products always make my shopping a breeze."
               </p>
             </blockquote>
       
-            <blockquote class="rounded-lg p-6 shadow-sm shadow-red-300 sm:p-8">
+            <blockquote class="rounded-lg p-6 shadow-sm shadow-pink-400 sm:p-8">
               <div class="flex items-center gap-4">
                 <img
                   alt="Man"
@@ -147,7 +138,7 @@
                 />
       
                 <div>
-                  <div class="flex justify-center gap-0.5 text-red-300">
+                  <div class="flex justify-center gap-0.5 text-pink-400">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       class="h-5 w-5"
@@ -205,14 +196,11 @@
               </div>
       
               <p class="mt-4 text-gray-700">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa sit
-                rerum incidunt, a consequuntur recusandae ab saepe illo est quia
-                obcaecati neque quibusdam eius accusamus error officiis atque
-                voluptates magnam!
+                "I love the convenience of finding everything I need in one place. Whether it's daily groceries or special snacks, S&G has it all. Plus, the staff is always helpful and kind."
               </p>
             </blockquote>
       
-            <blockquote class="rounded-lg p-6 shadow-sm shadow-red-300 sm:p-8">
+            <blockquote class="rounded-lg p-6 shadow-sm shadow-pink-400 sm:p-8">
               <div class="flex items-center gap-4">
                 <img
                   alt="Man"
@@ -221,7 +209,7 @@
                 />
       
                 <div>
-                  <div class="flex justify-center gap-0.5 text-red-300">
+                  <div class="flex justify-center gap-0.5 text-pink-400">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       class="h-5 w-5"
@@ -279,10 +267,7 @@
               </div>
       
               <p class="mt-4 text-gray-700">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa sit
-                rerum incidunt, a consequuntur recusandae ab saepe illo est quia
-                obcaecati neque quibusdam eius accusamus error officiis atque
-                voluptates magnam!
+                "As a newcomer to the neighborhood, discovering S&G was a delight. The warm welcome and personalized service made me feel right at home. I'm grateful for this little gem in the area!"
               </p>
             </blockquote>
           </div>
@@ -293,8 +278,8 @@
 
     <div class="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
         <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-center text-gray-900 dark:text-white">Contact Us</h2>
-        <p class="mb-8 lg:mb-16 font-light text-center text-gray-500 dark:text-gray-400 sm:text-xl">Lorem ipsum dolor sit, amet consectetur adipisicing elit. A, sapiente!</p>
-        <form action="#" class="space-y-8 p-10  shadow-md shadow-red-300">
+        
+        <form action="#" class="space-y-8 p-10  shadow-md shadow-pink-400">
             <div>
                 <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Your email</label>
                 <input type="email" id="email" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" placeholder="Enter email address" required>
@@ -307,7 +292,7 @@
                 <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Your message</label>
                 <textarea id="message" rows="6" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Leave a comment..."></textarea>
             </div>
-            <button class="bg-red-300 hover:bg-red-700 rounded-lg px-8 py-2 text-gray-100 hover:shadow-xl transition duration-150 uppercase">Send Message</button>
+            <button class="bg-pink-400 hover:bg-pink-600 rounded-lg px-8 py-2 text-gray-100 hover:shadow-xl transition duration-150 uppercase">Send Message</button>
         </form>
     </div>
 </x-layout>

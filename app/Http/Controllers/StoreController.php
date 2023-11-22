@@ -25,7 +25,7 @@ class StoreController extends Controller
     }
 
     public function manageproduct() {
-        return view('components.adminmanageprod' , ['products' => Products::all()]);
+        return view('components.adminmanageprod' , ['products' => Products::latest()->paginate(10)]);
     }
 
     public function product(Products $product) {
@@ -70,6 +70,27 @@ class StoreController extends Controller
 
         return back()->with('message', 'Product updated successfully!');
 
+    }
+
+    //Add to Cart
+    
+    public function addProductToCart($id) {
+        $product = Products::findOrFail($id);
+        $cart = session()->get('cart',[]);
+        if(isset($cart[$id])) {
+            $cart[$id]['quantity']++;
+        } else {
+            $cart[$id] = [
+            'productbrand' => $product->productbrand,
+            'price' => $product->price,
+            'quantity' => $product->quantity,
+            'logo' => $product->logo,
+            'description' => $product->description,
+            ];
+        }
+
+        session()->put('cart', $cart);
+        return redirect()->back()->with('message', 'Product has been added to cart');
     }
 
     

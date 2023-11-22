@@ -77,15 +77,32 @@
             <li>
                 <a href="/aboutus" class="block py-2 px-3 text-pink-400 rounded hover:text-pink-600 md:hover:bg-transparent md:hover:text-pink-600 md:p-0 "><i class="fa-solid fa-address-card"></i> About us</a>
             </li>
+            {{-- Auth --}}
+
+            @auth
+            <li>
+                <a href="/admin" class="hover:text-pink-600"><span class="font-bold text-pink-400">Welcome {{auth()->user()->name}}</span></a>
+            </li>
+            <li>
+                <form method="POST" action="/logout" class="block py-2 px-3 text-pink-400 rounded hover:text-pink-600 md:hover:bg-transparent md:hover:text-pink-600 md:p-0 0">
+                  @csrf
+                  <button type="submit" class="hover:text-pink-600">
+                    <i class="fa-solid fa-door-closed"></i> Logout
+                  </button>
+                </form>
+            </li>
             
+            @else
             <li>
-                <a href="/register" class="block py-2 px-3 text-pink-400 rounded hover:text-pink-600 md:hover:bg-transparent md:hover:text-pink-600 md:p-0 0"><i class="fa-solid fa-user-plus"></i> Register</a>
-            </li>
+              <a href="/register" class="block py-2 px-3 text-pink-400 rounded hover:text-pink-600 md:hover:bg-transparent md:hover:text-pink-600 md:p-0 0"><i class="fa-solid fa-user-plus"></i> Register</a>
+          </li>
+          <li>
+              <a href="/login" class="block py-2 px-3 text-pink-400 rounded hover:text-pink-600 md:hover:bg-transparent md:hover:text-pink-600 md:p-0 0"><i class="fa-solid fa-right-to-bracket"></i> Login</a>
+          </li>
+          @endauth
             <li>
-                <a href="/login" class="block py-2 px-3 text-pink-400 rounded hover:text-pink-600 md:hover:bg-transparent md:hover:text-pink-600 md:p-0 0"><i class="fa-solid fa-right-to-bracket"></i> Login</a>
-            </li>
-            <li>
-              <a href="/cart" class="block py-2 px-3 text-pink-400 rounded hover:text-pink-600 md:hover:bg-transparent md:hover:text-pink-600 md:p-0 0"><i class="fa-solid fa-cart-shopping"></i> Cart</a>
+              <a href="/cart" class="block py-2 px-3 text-pink-400 rounded hover:text-pink-600 md:hover:bg-transparent md:hover:text-pink-600 md:p-0 0"><i class="fa-solid fa-cart-shopping"></i> Cart<span> </span><span class="bg-pink-400 text-white pl-1 pr-1">{{count((array) session('cart')) }}</span></a>
+              
             </li>
         </ul>
       </div>

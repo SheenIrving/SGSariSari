@@ -159,13 +159,18 @@
     <div class="bg-white lg:block hidden w-3/4">
         <h1 class="uppercase tracking-wide text-lg font-semibold text-gray-700 my-2">Order Summary</h1>
         <ul class="py-6 border-b space-y-6 px-8">
-            <li class="grid grid-cols-6 gap-2 border-b-1">
+            @if(session('cart'))
+                @foreach(session('cart') as $id => $details)
+            <li class="grid grid-cols-6 gap-2 border-b-1 details-{{$id}}">
                 <div class="col-span-1 self-center">
-                    <img src="https://bit.ly/3oW8yej" alt="Product" class="rounded w-full">
+                    {{-- <img src="{{ asset('logo') }}/{{ $details['logo'] }}" alt="Product" class="rounded w-full"> --}}
+                    <img src="{{ $details['logo'] ? asset('storage/' . $details['logo']) : asset('images/4800016642029.jpg') }}" 
+                             alt="{{ $details['productbrand'] }}" 
+                             class="object-cover w-full">
                 </div>
                 <div class="flex flex-col col-span-3 pt-2">
-                    <span class="text-gray-600 text-md font-semi-bold">Studio 2 Headphone</span>
-                    <span class="text-gray-400 text-sm inline-block pt-2">Red Headphone</span>
+                    <span class="text-gray-600 text-md font-semi-bold">{{$details['productbrand']}}</span>
+                    <span class="text-gray-400 text-sm inline-block pt-2">{{$details['description']}}</span>
                 </div>
                 <div class="col-span-2 pt-3">
                     <div class="flex items-center space-x-2 text-sm justify-between">
@@ -175,32 +180,17 @@
                             class="flex items-center w-full font-semibold text-center text-gray-700 placeholder-gray-700 bg-gray-100 outline-none dark:text-gray-400 dark:placeholder-gray-400 dark:bg-gray-900 focus:outline-none text-md hover:text-black"
                             placeholder="1">
                     </div>
-                        <span class="text-gray-400"> x ₱30.99</span>
-                        <span class="text-pink-400 font-semibold inline-block">₱30.99</span>
+                        <span class="text-gray-400"> x {{$details['price']}}</span>
+                        <span class="text-pink-400 font-semibold inline-block">{{$details['price']}}</span>
+                        <span> </span>
+                        <span> </span>
+                        <button><i class="fa-solid fa-trash text-pink-400"></i></button>
                     </div>
                 </div>
             </li>
-            <li class="grid grid-cols-6 gap-2 border-b-1">
-                <div class="col-span-1 self-center">
-                    <img src="https://bit.ly/3lCyoSx" alt="Product" class="rounded w-full">
-                </div>
-                <div class="flex flex-col col-span-3 pt-2">
-                    <span class="text-gray-600 text-md font-semi-bold">Apple iPhone 13</span>
-                    <span class="text-gray-400 text-sm inline-block pt-2">Phone</span>
-                </div>
-                <div class="col-span-2 pt-3">
-                    <div class="flex items-center space-x-2 text-sm justify-between">
-                      <div class=" flex flex-row w-28 h-8 bg-transparent rounded-lg">
-
-                        <input type="number"
-                            class="flex items-center w-full font-semibold text-center text-gray-700 placeholder-gray-700 bg-gray-100 outline-none dark:text-gray-400 dark:placeholder-gray-400 dark:bg-gray-900 focus:outline-none text-md hover:text-black"
-                            placeholder="1">
-                    </div>
-                        <span class="text-gray-400"> x 785</span>
-                        <span class="text-pink-400 font-semibold inline-block">785</span>
-                    </div>
-                </div>
-            </li>
+                @endforeach
+            @endif    
+            
         </ul>
         <div class="px-8 border-b">
             <div class="flex justify-between py-4 text-gray-600">
@@ -225,3 +215,4 @@
     </div>
 </div>
 </x-layout>
+

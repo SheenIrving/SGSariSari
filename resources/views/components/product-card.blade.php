@@ -22,8 +22,8 @@
         >₱{{$product->price}}</span
       >
       <a
-        href="#"
-        class="text-white bg-pink-500 hover:bg-pink-700 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800"
+        href="{{route('addtocart', $product->id)}}"
+        class="text-white bg-pink-500 hover:bg-pink-700 focus:ring-4 focus:outline-none focus:ring-pink-600 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800"
         >Add to cart</a
       >
     </div>

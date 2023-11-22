@@ -12,7 +12,7 @@
               <h4
                 class="font-semibold text-lg text-gray-700 capitalize font-poppins tracking-wide"
               >
-                Sheen Irving Suba
+              {{auth()->user()->name}}
               </h4>
               <span class="text-sm tracking-wide flex items-center space-x-1">
                 <svg
@@ -233,6 +233,9 @@
                                         <option value="Detergents">Detergents</option>
                                         <option value="Noodles">Noodles</option>
                                         <option value="Snacks">Snacks</option>
+                                        <option value="Softdrinks">Softdrinks</option>
+                                        <option value="Condiments">Condiments</option>
+
                                     </select>
                                     @error('category')
                                       <p class="text-red-500 text-xs mt-1">{{$message}}</p>
@@ -283,25 +286,25 @@
               <p class="my-4 text-lg text-gray-500">
                   Total products
                 </p><br>
-              <h2 class="text-4xl font-extrabold dark:text-white">12</h2>
+              <h2 class="text-4xl font-extrabold dark:text-white">{{$products->count('quantity')}}</h2>
           </div>
           <div class="w-3/12 mb-3">
               <p class="my-4 text-lg text-gray-500">
                   Out of stock
                 </p><br>
-                <h2 class="text-4xl font-extrabold dark:text-white">12</h2>
+                <h2 class="text-4xl font-extrabold dark:text-white">0</h2>
           </div>
           <div class="w-3/12 mb-3">
               <p class="my-4 text-lg text-gray-500">
                  Total Items
                 </p><br>
-                <h2 class="text-4xl font-extrabold dark:text-white">12</h2>
+                <h2 class="text-4xl font-extrabold dark:text-white">0</h2>
           </div>
           <div class="w-3/12 mb-3">
               <p class="my-4 text-lg text-gray-500">
                   Categories
                 </p><br>
-                <h2 class="text-4xl font-extrabold dark:text-white">12</h2>
+                <h2 class="text-4xl font-extrabold dark:text-white">0</h2>
           </div>
           </div>
          
@@ -383,7 +386,12 @@
               
                 </tbody>
             </table>
+            
+          </div>
+          <div class="mt-6 p-4">
+            {{$products->links()}}
           </div>
         </div>
       </div>
+      
     </x-layout>
